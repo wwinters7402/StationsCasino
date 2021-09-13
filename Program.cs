@@ -2,7 +2,8 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace FaceBook_Logon_Negative
+namespace Stations
+
 {
     class Program
     {
@@ -13,16 +14,22 @@ namespace FaceBook_Logon_Negative
 
             driver.Manage().Window.Maximize();
            
-            driver.Navigate().GoToUrl("http://www.facebook.com");
+            driver.Navigate().GoToUrl("https://www.sclv.com/Account/Login?_ga=2.132721550.1425800835.1631491623-287469639.1631491623");
 
-            driver.FindElement(By.Id("email")).SendKeys("woodrowwinter7402@gmail.com");
-            driver.FindElement(By.Id("pass")).SendKeys("Ethan@7402");
-            driver.FindElement(By.Name("login")).Click();
+            driver.FindElement(By.CssSelector("#maincontent_0_pageform_0_loginControl_UserName")).SendKeys("woodrowwinters");
 
-           
+            driver.FindElement(By.XPath("//input[@id='maincontent_0_pageform_0_loginControl_Password']")).SendKeys("Lacie@7402");
 
-            driver.FindElement(By.ClassName("ijkhr0an pnx7fd3z sgqwj88q hzruof5a pmk7jnqg rnx8an3s fcg2cn6m")).SendKeys("Lacie Winters");
+            driver.FindElement(By.Id("maincontent_0_pageform_0_loginControl_LoginButton")).Click();
 
+            driver.FindElement(By.Id("maincontent_0_twocolumncontent_1_btnLogout")).Click();
+
+            driver.Close();
+
+            
+
+
+            
             
 
             
